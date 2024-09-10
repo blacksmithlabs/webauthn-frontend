@@ -67,7 +67,7 @@ const ProfilePage = () => {
   useEffect(() => {
     if (!loggedIn) {
       console.log('Not logged in')
-      navigate('/login')
+      navigate('login')
     }
   }, [loggedIn, navigate])
 
@@ -80,7 +80,7 @@ const ProfilePage = () => {
         if (!(e instanceof UserNotFoundError)) {
           console.error('Failed to get user info:', username);
         }
-        navigate('/login');
+        navigate('login');
       });
     }
   }
@@ -141,7 +141,7 @@ const OtpPrompt = () => {
   useEffect(() => {
       if (!username) {
         console.log('Username not set. Redirecting to login');
-        navigate('/login')
+        navigate('login')
       }
   }, [username, navigate])
 
@@ -152,7 +152,7 @@ const OtpPrompt = () => {
     if (otp === '123456') {
       console.log('Logged in successfully');
       setLoggedIn(true, 'otp');
-      navigate('/profile');
+      navigate('profile');
     } else {
       console.log('Invalid OTP');
       setError('Invalid OTP');
@@ -191,7 +191,7 @@ const LoginForm = () => {
       const doLogin = () => {
         console.log('Logged in successfully');
         setLoggedIn(true, 'webauthn');
-        navigate('/profile');
+        navigate('profile');
       };
 
       try {
@@ -221,7 +221,7 @@ const LoginForm = () => {
           alert('Authentication failed');
         }
       }
-      // navigate('/otp');
+      // navigate('otp');
     }
   }
 
