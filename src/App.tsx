@@ -69,7 +69,7 @@ const ProfilePage = () => {
       console.log('Not logged in')
       navigate('login')
     }
-  }, [loggedIn, navigate])
+  }, [loggedIn])
 
   const loadCredentials = () => {
     if (username) {
@@ -84,7 +84,7 @@ const ProfilePage = () => {
       });
     }
   }
-  useEffect(loadCredentials, [username, setCredentials, navigate]);
+  useEffect(loadCredentials, [username, setCredentials]);
 
   const createPasskey = async () => {
     try {
@@ -143,7 +143,7 @@ const OtpPrompt = () => {
         console.log('Username not set. Redirecting to login');
         navigate('login')
       }
-  }, [username, navigate])
+  }, [username])
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
