@@ -121,7 +121,6 @@ const ProfilePage = () => {
               <li key={index}>
                 <div>Id: {credential.id}</div>
                 <div>Public Key: {credential.publicKey}</div>
-                <div>Sign Count: {credential.authenticator.signCount}</div>
               </li>
             ))}
           </ul>
