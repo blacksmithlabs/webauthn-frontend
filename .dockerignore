@@ -1,0 +1,6 @@
+.github
+.nvmrc
+.eslintrc.cjs
+deployment.yaml
+build-docker.sh
+Dockerfile
